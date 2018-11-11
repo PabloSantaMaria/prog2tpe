@@ -1,60 +1,54 @@
 package prog2tpe;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario extends Cliente {
-	private String nombre;
-	private Vector<Pelicula> vistas;
-	private String[] generosPreferidos;
 	private int edad;
-	
-	public Usuario (String nombre, int edad){
-		this.nombre =nombre;
-		this.vistas = new Vector<Pelicula>();
+	private List<Pelicula> peliculasVistas;
+	private List<Genero> generosPreferidos;
+
+	public Usuario (String nombre, int edad) {
+		super(nombre);
 		this.edad = edad;
-		this.generosPreferidos = null;
+		this.peliculasVistas = new ArrayList<Pelicula>();
+		this.generosPreferidos = new ArrayList<Genero>();
 	}
-	public Usuario (String nombre, int edad, String[] generos){
-		this.nombre = nombre;
-		this.vistas = new Vector<Pelicula>();
-		this.edad = edad;
-		this.generosPreferidos = generos;
+
+	public int getEdad() { return edad; }
+
+	public void verPelicula(Pelicula pelicula) {
+		if (!peliculasVistas.contains(pelicula)) {
+			peliculasVistas.add(pelicula);
+			pelicula.aumentarPopularidad();
+			this.addGenerosPreferidos(pelicula.getGeneros());
+		}
 	}
-	
-	public Usuario (String nombre, int edad, String[] generos, Vector<Pelicula> vistas){
-		this.nombre = nombre;
-		this.vistas = vistas;
-		this.edad = edad;
-		this.generosPreferidos = generos;
-	}
-	
-	public int getedad(){
-		return edad;
-	}
-	
-	public String getNombre(){
-		return nombre;
+	private void addGenerosPreferidos(List<Genero> generos) {
+		for (Genero genero : generos) {
+			if (!generosPreferidos.contains(genero) && genero != null)
+				generosPreferidos.add(genero);
+		}
 	}
 	
-	public Vector<Pelicula> getPeliculas(){
-		return vistas;
-	}
-	
-	public String[] getGenerosFavoritos(){
+	//iterator?
+	public List<Genero> getGenerosPreferidos() {
 		return generosPreferidos;
 	}
-	
-	public String toString(){
-		String imprimir = ("Nombre: "+nombre+". Edad: "+edad+". " );
-		String auxImprimir = " ";
-		for (int i = 0; i < generosPreferidos.length; i++) {
-			auxImprimir += generosPreferidos[i] + " ";
-		}
-		imprimir += "Generos Preferidos : " + auxImprimir;
-		return imprimir;
+	//iterator?
+	public List<Pelicula> getPeliculasVistas() {
+		return peliculasVistas;
 	}
-	
-	public void valorar(Pelicula p, int valor){
-		p.valorar(valor);
-	}
+
+
+	//	public String toString() {
+	//		String imprimir = ("Nombre: "+nombre+". Edad: "+edad+". " );
+	//		String auxImprimir = "";
+	//		for (int i = 0; i < generosPreferidos.length; i++) {
+	//			auxImprimir += generosPreferidos[i] + " ";
+	//		}
+	//		imprimir += "Generos Preferidos : " + auxImprimir;
+	//		return imprimir;
+	//	}
+
 }

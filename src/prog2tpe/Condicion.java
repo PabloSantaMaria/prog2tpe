@@ -1,5 +1,5 @@
 package prog2tpe;
 
 public interface Condicion {
-	boolean cumple(Pelicula e1);
+	boolean cumple(Pelicula p);
 }

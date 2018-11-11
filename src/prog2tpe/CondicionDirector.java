@@ -1,13 +1,20 @@
 package prog2tpe;
 
-public class CondicionDirector implements Condicion{
-	private String valor;
+public class CondicionDirector implements Condicion {
+	///no entiendo
 	
-	public CondicionDirector(String valor){
-		this.valor = valor;
+	
+	private String director;
+	
+	public CondicionDirector(String director) {
+		this.director = director;
 	}
 	
-	public boolean cumple(Pelicula e1) {
-		return (e1).getDirector().toLowerCase().contains(valor.toLowerCase());
+	public boolean cumple(Pelicula p) {
+		for (String director : p.getDirectores()) {
+			if (p.getDirectores().contains(director))
+				return true;
+		}
+		return false;
 	}		
 }
