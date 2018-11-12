@@ -11,9 +11,9 @@ public class Grupo extends Cliente {
 		this.integrantes = new ArrayList<Cliente>();
 	}
 	
-	public void addIntegrante(Cliente c) {
-		if (!integrantes.contains(c)) {
-			integrantes.add(c);
+	public void addIntegrante(Cliente cliente) {
+		if (!integrantes.contains(cliente)) {
+			integrantes.add(cliente);
 		}	
 	}
 	

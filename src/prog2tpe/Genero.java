@@ -18,10 +18,13 @@ public class Genero {
 
 	public List<Pelicula> getPeliculas() { return peliculas; }
 
-	public void addPelicula(Pelicula p) {
-		if (!peliculas.contains(p)) {
-			peliculas.add(p);
-			p.addGenero(this);
+	public void addPelicula(Pelicula pelicula) {
+		if (!peliculas.contains(pelicula)) {
+			peliculas.add(pelicula);
+			pelicula.addGenero(this);
 		}
+	}
+	public String toString() {
+		return this.nombre;
 	}
 }

@@ -16,10 +16,9 @@ public class Pelicula {
 	private int totalValoraciones;
 
 
-	public Pelicula(String titulo, int anio, int duracion) {
+	public Pelicula(String titulo, int anio) {
 		this.titulo = titulo;
 		this.anio = anio;
-		this.duracion = duracion;
 		this.actores = new ArrayList<String>();
 		this.directores = new ArrayList<String>();
 		this.generos = new ArrayList<Genero>();
@@ -47,21 +46,31 @@ public class Pelicula {
 			genero.addPelicula(this);
 		}
 	}
-	public void agregarActor (String actor) {
+	public void addActor (String actor) {
 		if (!actores.contains(actor))
 			actores.add(actor);	
 	}
-	public void agregarDirector (String director) {
+	public void addDirector (String director) {
 		if (!actores.contains(director))
 			actores.add(director);
 	}
-	
+
 	public void aumentarPopularidad() {
 		this.popularidad++;
 	}
 	public void valorar(int valoracion) {
 		totalValoraciones += valoracion;
 		cantVotos++;
+	}
+
+	public boolean equals(Object o) {
+		if (o == null) return false;
+		if (this.getClass() != o.getClass()) return false;
+		Pelicula p = (Pelicula) o;
+		return this.getTitulo().toLowerCase() == p.getTitulo().toLowerCase() && this.getAnio() == p.getAnio();
+	}
+	public String toString() {
+		return titulo + " (" + anio + ")";
 	}
 
 	//iterator?
@@ -75,40 +84,6 @@ public class Pelicula {
 	//iterator?
 	public List<String> getDirectores() { //es nehesario?
 		return directores;
-	}
-
-
-	//	public String toString() {
-	//		String imprimir = ("Título: " + titulo + ". Año de estreno: " + anio + ". Duración: " + duracion + " ");
-	//		imprimir += this.toStringGeneros() + toStringActores();
-	//		return imprimir;
-	//	}
-
-
-	//	public String toStringGeneros() {
-	//		String imprimir= "Generos: ";
-	//		for (int i=0; i<generos.length; i++) {
-	//			imprimir += generos[i]+ " ";
-	//		}
-	//		return imprimir;
-	//	}
-
-	//	public String toStringActores(){
-	//		String imprimir= "Actores protagonicos: ";
-	//		for(int i=0; i < actores.size(); i++) {
-	//			imprimir += actores.get(i)+ " ";
-	//		}
-	//		return imprimir;
-	//	}
-
-
-	//???
-	//	public void setComentarios(String comentarios) {
-	//		this.comentarios = comentarios;
-	//	}
-
-	public String toString() {
-		return titulo + " (" + anio + ")";
 	}
 
 	public Boolean coincide(Condicion c1) {

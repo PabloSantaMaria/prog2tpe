@@ -17,7 +17,17 @@ public abstract class Cliente {
 			p.valorar(valoracion);
 	}
 	
-	public abstract void verPelicula(Pelicula p);
+	public boolean equals(Object o) {
+		if (o == null) return false;
+		if (this.getClass() != o.getClass()) return false;
+		Cliente c = (Cliente) o;
+		return this.getNombre().toLowerCase() == c.getNombre().toLowerCase();
+	}
+	public String toString() {
+		return this.nombre;
+	}
+	
+	public abstract void verPelicula(Pelicula pelicula);
 	public abstract List<Pelicula> getPeliculasVistas();
 	public abstract List<Genero> getGenerosPreferidos();
 }

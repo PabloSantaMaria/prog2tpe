@@ -8,9 +8,8 @@ public class Usuario extends Cliente {
 	private List<Pelicula> peliculasVistas;
 	private List<Genero> generosPreferidos;
 
-	public Usuario (String nombre, int edad) {
+	public Usuario (String nombre) {
 		super(nombre);
-		this.edad = edad;
 		this.peliculasVistas = new ArrayList<Pelicula>();
 		this.generosPreferidos = new ArrayList<Genero>();
 	}
@@ -21,14 +20,18 @@ public class Usuario extends Cliente {
 		if (!peliculasVistas.contains(pelicula)) {
 			peliculasVistas.add(pelicula);
 			pelicula.aumentarPopularidad();
-			this.addGenerosPreferidos(pelicula.getGeneros());
+//			this.addGenerosPreferidos(pelicula.getGeneros());
 		}
 	}
-	private void addGenerosPreferidos(List<Genero> generos) {
-		for (Genero genero : generos) {
-			if (!generosPreferidos.contains(genero) && genero != null)
-				generosPreferidos.add(genero);
-		}
+//	private void addGenerosPreferidos(List<Genero> generos) {
+//		for (Genero genero : generos) {
+//			if (!generosPreferidos.contains(genero) && genero != null)
+//				generosPreferidos.add(genero);
+//		}
+//	}
+	public void addGeneroPreferido(Genero genero) {
+		if (!generosPreferidos.contains(genero))
+			generosPreferidos.add(genero);
 	}
 	
 	//iterator?
