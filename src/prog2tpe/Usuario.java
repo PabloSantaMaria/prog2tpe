@@ -15,43 +15,23 @@ public class Usuario extends Cliente {
 	}
 
 	public int getEdad() { return edad; }
+	public void setEdad(int edad) { this.edad = edad; }
+	public List<Pelicula> getPeliculasVistas() {
+		return peliculasVistas;
+	}
+	public List<Genero> getGenerosPreferidos() {
+		return generosPreferidos;
+	}
 
 	public void verPelicula(Pelicula pelicula) {
 		if (!peliculasVistas.contains(pelicula)) {
 			peliculasVistas.add(pelicula);
 			pelicula.aumentarPopularidad();
-//			this.addGenerosPreferidos(pelicula.getGeneros());
 		}
 	}
-//	private void addGenerosPreferidos(List<Genero> generos) {
-//		for (Genero genero : generos) {
-//			if (!generosPreferidos.contains(genero) && genero != null)
-//				generosPreferidos.add(genero);
-//		}
-//	}
+	
 	public void addGeneroPreferido(Genero genero) {
 		if (!generosPreferidos.contains(genero))
 			generosPreferidos.add(genero);
 	}
-	
-	//iterator?
-	public List<Genero> getGenerosPreferidos() {
-		return generosPreferidos;
-	}
-	//iterator?
-	public List<Pelicula> getPeliculasVistas() {
-		return peliculasVistas;
-	}
-
-
-	//	public String toString() {
-	//		String imprimir = ("Nombre: "+nombre+". Edad: "+edad+". " );
-	//		String auxImprimir = "";
-	//		for (int i = 0; i < generosPreferidos.length; i++) {
-	//			auxImprimir += generosPreferidos[i] + " ";
-	//		}
-	//		imprimir += "Generos Preferidos : " + auxImprimir;
-	//		return imprimir;
-	//	}
-
 }

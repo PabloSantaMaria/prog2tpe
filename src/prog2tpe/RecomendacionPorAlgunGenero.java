@@ -2,13 +2,19 @@ package prog2tpe;
 
 import java.util.Iterator;
 
-public class CondicionPorAlgunGenero implements CondicionStrategy {
+public class RecomendacionPorAlgunGenero implements RecomendacionStrategy {
 	private Cliente cliente;
 	
-	public CondicionPorAlgunGenero() {
+	public RecomendacionPorAlgunGenero() {
 		this.cliente = null;
 	}
 	
+	@Override
+	public Cliente getCliente() {
+		return cliente;
+	}
+	
+	@Override
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}

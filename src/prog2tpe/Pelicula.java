@@ -29,8 +29,11 @@ public class Pelicula {
 
 	public String getTitulo() { return titulo; }
 	public int getAnio() { return anio; }
-	public int getDuracion() { return duracion; }
 	public String getSinopsis() { return sinopsis; }
+	public int getDuracion() { return duracion; }
+	public List<String> getActores() { return actores; }
+	public List<String> getDirectores() { return directores; }
+	public List<Genero> getGeneros() { return generos; }	
 	public int getPopularidad() { return popularidad; }
 	public int getCantVotos() { return cantVotos; }
 	public double getPuntaje() {
@@ -44,12 +47,6 @@ public class Pelicula {
 	public void setAnio(int anio) { this.anio = anio; }
 	public void setSinopsis(String sinopsis) { this.sinopsis = sinopsis; }
 
-	public void addGenero(Genero genero) {
-		if (!generos.contains(genero)) {
-			generos.add(genero);
-			genero.addPelicula(this);
-		}
-	}
 	public void addActor (String actor) {
 		if (!actores.contains(actor))
 			actores.add(actor);	
@@ -58,7 +55,13 @@ public class Pelicula {
 		if (!actores.contains(director))
 			actores.add(director);
 	}
-
+	public void addGenero(Genero genero) {
+		if (!generos.contains(genero)) {
+			generos.add(genero);
+			genero.addPelicula(this);
+		}
+	}
+	
 	public void aumentarPopularidad() {
 		this.popularidad++;
 	}
@@ -71,26 +74,13 @@ public class Pelicula {
 		if (o == null) return false;
 		if (this.getClass() != o.getClass()) return false;
 		Pelicula p = (Pelicula) o;
-		return this.getTitulo().toLowerCase() == p.getTitulo().toLowerCase() && this.getAnio() == p.getAnio();
+		return this.getTitulo() == p.getTitulo() && this.getAnio() == p.getAnio();
 	}
 	public String toString() {
 		return titulo + " (" + anio + ")";
 	}
 
-	
-	public List<String> getActores() {
-		return actores;
-	}
-	
-	public List<Genero> getGeneros() {
-		return generos;
-	}
-	
-	public List<String> getDirectores() {
-		return directores;
-	}
-
-	public boolean cumple(CondicionStrategy condicion) {
+	public boolean cumple(RecomendacionStrategy condicion) {
 		return condicion.cumpleCriterio(this);
 	}
 }

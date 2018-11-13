@@ -11,17 +11,6 @@ public class Grupo extends Cliente {
 		this.integrantes = new ArrayList<Cliente>();
 	}
 	
-	public void addIntegrante(Cliente cliente) {
-		if (!integrantes.contains(cliente)) {
-			integrantes.add(cliente);
-		}	
-	}
-	
-	public void verPelicula(Pelicula p) {
-		for (Cliente integrante : integrantes)
-			integrante.verPelicula(p);
-	}
-	
 	public List<Pelicula> getPeliculasVistas() {
 		List<Pelicula> salida = new ArrayList<Pelicula>();
 		for (Cliente integrante : integrantes) {
@@ -44,14 +33,14 @@ public class Grupo extends Cliente {
 		return salida;
 	}
 	
-//	public String toString() {
-//		String imprimir = ("\033[34m"+"Nombre: "+nombre+". " );
-//		String auxImprimir = "";
-//		for (int i = 0; i < integrantes.size(); i++) {
-//			auxImprimir += integrantes.get(i).toString()+" ";
-//		}
-//		imprimir += "integrantes del grupo : "+ auxImprimir;
-//		return imprimir;
-//	}
-
+	public void verPelicula(Pelicula p) {
+		for (Cliente integrante : integrantes)
+			integrante.verPelicula(p);
+	}
+	
+	public void addIntegrante(Cliente cliente) {
+		if (!integrantes.contains(cliente)) {
+			integrantes.add(cliente);
+		}	
+	}
 }
