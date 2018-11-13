@@ -150,8 +150,10 @@ public class Main {
 		Maggie.verPelicula(ToyStory);
 		Maggie.valorarPelicula(ToyStory, 1);
 		
-		CondicionStrategy r = new CondicionPorGenerosPreferidos();
-		Comparator<Pelicula> c = new ComparadorPopularidad();
+		CondicionStrategy todosLosGeneros = new CondicionPorGenerosPreferidos();
+		CondicionStrategy algunGenero = new CondicionPorAlgunGenero();
+		Comparator<Pelicula> popularidad = new ComparadorPopularidad();
+		Comparator<Pelicula> puntaje = new ComparadorPuntaje();
 		
 		//RESOLUCION
 		//1.
@@ -160,22 +162,44 @@ public class Main {
 		sistema.listarPeliculasVistas(Bart);
 		//3.
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Lisa:");
-		sistema.recomendarPeliculas(Lisa, r, c, 2);
+		sistema.recomendar(Lisa, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Bart:");
-		sistema.recomendarPeliculas(Bart, r, c, 2);
+		sistema.recomendar(Bart, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Maggie:");
-		sistema.recomendarPeliculas(Maggie, r, c, 2);
+		sistema.recomendar(Maggie, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Marge:");
-		sistema.recomendarPeliculas(Marge, r, c, 2);
+		sistema.recomendar(Marge, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Homero:");
-		sistema.recomendarPeliculas(Homero, r, c, 2);
+		sistema.recomendar(Homero, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Hombres Simpson:");
-		sistema.recomendarPeliculas(HombresSimpson, r, c, 2);
+		sistema.recomendar(HombresSimpson, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Hermanos Simpson:");
-		sistema.recomendarPeliculas(HermanosSimpson, r, c, 2);
+		sistema.recomendar(HermanosSimpson, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Familia Simpson:");
-		sistema.recomendarPeliculas(FamiliaSimpson, r, c, 2);
+		sistema.recomendar(FamiliaSimpson, todosLosGeneros, popularidad, 2);
+		//4.
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Lisa:");
+		sistema.recomendar(Lisa, algunGenero, puntaje, 5);
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Bart:");
+		sistema.recomendar(Bart, algunGenero, puntaje, 5);
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Maggie:");
+		sistema.recomendar(Maggie, algunGenero, puntaje, 5);
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Marge:");
+		sistema.recomendar(Marge, algunGenero, puntaje, 5);
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Homero:");
+		sistema.recomendar(Homero, algunGenero, puntaje, 5);
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Hombres Simpson:");
+		sistema.recomendar(HombresSimpson, algunGenero, puntaje, 5);
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Hermanos Simpson:");
+		sistema.recomendar(HermanosSimpson, algunGenero, puntaje, 5);
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Familia Simpson:");
+		sistema.recomendar(FamiliaSimpson, algunGenero, puntaje, 5);
 		
-		
+		System.out.println(Up.toString()+Up.getPuntaje());
+		System.out.println(LosSimpson.toString()+LosSimpson.getPuntaje());
+		System.out.println(LosIncreibles.toString()+LosIncreibles.getPuntaje());
+		System.out.println(LosIncreibles2.toString()+LosIncreibles2.getPuntaje());
+		System.out.println(ToyStory.toString()+ToyStory.getPuntaje());
+		System.out.println(MonstersInc.toString()+MonstersInc.getPuntaje());
 	}
 }

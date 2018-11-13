@@ -33,7 +33,11 @@ public class Pelicula {
 	public String getSinopsis() { return sinopsis; }
 	public int getPopularidad() { return popularidad; }
 	public int getCantVotos() { return cantVotos; }
-	public double getPuntaje() { return (double)totalValoraciones / cantVotos; }
+	public double getPuntaje() {
+		if (cantVotos == 0)
+			return 0;
+		else return (double)totalValoraciones / cantVotos;
+	}
 
 	public void setTitulo(String titulo) { this.titulo = titulo; }
 	public void setDuracion(int duracion) { this.duracion = duracion; }

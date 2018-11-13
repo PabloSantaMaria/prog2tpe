@@ -26,20 +26,33 @@ public class SistemaDeRecomendacion {
 		}
 	}
 
-	public void recomendarPeliculas(Cliente cliente, CondicionStrategy condicion, Comparator<Pelicula> ordenamiento, int limite) {
+	public void recomendar(Cliente cliente, CondicionStrategy condicion, Comparator<Pelicula> ordenamiento) {
 		condicion.setCliente(cliente);
+		List<Pelicula> recomendadas = getRecomendaciones(condicion, ordenamiento);
+		imprimirRecomendaciones(recomendadas, -1);
+	}
+	
+	public void recomendar(Cliente cliente, CondicionStrategy condicion, Comparator<Pelicula> ordenamiento, int limite) {
+		condicion.setCliente(cliente);
+		List<Pelicula> recomendadas = getRecomendaciones(condicion, ordenamiento);
+		imprimirRecomendaciones(recomendadas, limite);
+	}
+
+	private List<Pelicula> getRecomendaciones(CondicionStrategy condicion, Comparator<Pelicula> ordenamiento) {
 		List<Pelicula> salida = new ArrayList<Pelicula>();
 		for (Pelicula pelicula : peliculas) {
 			if (pelicula.cumple(condicion))
 				salida.add(pelicula);
 		}
 		Collections.sort(salida, ordenamiento);
-		imprimirRecomendaciones(salida, limite);
+		return salida;
 	}
-	
+
 	private void imprimirRecomendaciones(List<Pelicula> recomendadas, int limite) {
-		if (recomendadas.size() < limite)
+		if (limite == -1 || recomendadas.size() < limite)
 			limite = recomendadas.size();
+		if (recomendadas.isEmpty())
+			System.out.println("No existen recomendaciones con ese criterio");
 		for (int i = 0; i < limite; i++) {
 			System.out.println(recomendadas.get(i));
 		}
