@@ -1,5 +1,7 @@
 package prog2tpe;
 
+import java.util.Comparator;
+
 public class Main {
 	public static void main(String[] args) {
 		SistemaDeRecomendacion sistema = new SistemaDeRecomendacion();
@@ -148,8 +150,32 @@ public class Main {
 		Maggie.verPelicula(ToyStory);
 		Maggie.valorarPelicula(ToyStory, 1);
 		
+		CondicionStrategy r = new CondicionPorGenerosPreferidos();
+		Comparator<Pelicula> c = new ComparadorPopularidad();
+		
 		//RESOLUCION
+		//1.
 		sistema.listarPeliculasVistas(Marge);
+		//2.
 		sistema.listarPeliculasVistas(Bart);
+		//3.
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Lisa:");
+		sistema.recomendarPeliculas(Lisa, r, c, 2);
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Bart:");
+		sistema.recomendarPeliculas(Bart, r, c, 2);
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Maggie:");
+		sistema.recomendarPeliculas(Maggie, r, c, 2);
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Marge:");
+		sistema.recomendarPeliculas(Marge, r, c, 2);
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Homero:");
+		sistema.recomendarPeliculas(Homero, r, c, 2);
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Hombres Simpson:");
+		sistema.recomendarPeliculas(HombresSimpson, r, c, 2);
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Hermanos Simpson:");
+		sistema.recomendarPeliculas(HermanosSimpson, r, c, 2);
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Familia Simpson:");
+		sistema.recomendarPeliculas(FamiliaSimpson, r, c, 2);
+		
+		
 	}
 }

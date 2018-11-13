@@ -73,20 +73,20 @@ public class Pelicula {
 		return titulo + " (" + anio + ")";
 	}
 
-	//iterator?
-	public List<String> getActores() { //es nehesario?
+	
+	public List<String> getActores() {
 		return actores;
 	}
-	//iterator?
-	public List<Genero> getGeneros() { //es nehesario?
+	
+	public List<Genero> getGeneros() {
 		return generos;
 	}
-	//iterator?
-	public List<String> getDirectores() { //es nehesario?
+	
+	public List<String> getDirectores() {
 		return directores;
 	}
 
-	public Boolean coincide(Condicion c1) {
-		return c1.cumple(this);
+	public boolean cumple(CondicionStrategy condicion) {
+		return condicion.cumpleCriterio(this);
 	}
 }
