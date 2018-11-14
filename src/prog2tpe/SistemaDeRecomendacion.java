@@ -45,13 +45,23 @@ public class SistemaDeRecomendacion {
 	public void recomendar(Cliente cliente, RecomendacionStrategy condicion, Comparator<Pelicula> ordenamiento) {
 		condicion.setCliente(cliente);
 		List<Pelicula> recomendadas = getRecomendaciones(condicion, ordenamiento);
-		imprimirRecomendaciones(recomendadas, -1);
+		imprimirResultados(recomendadas, -1);
 	}
 
 	public void recomendar(Cliente cliente, RecomendacionStrategy condicion, Comparator<Pelicula> ordenamiento, int limite) {
 		condicion.setCliente(cliente);
 		List<Pelicula> recomendadas = getRecomendaciones(condicion, ordenamiento);
-		imprimirRecomendaciones(recomendadas, limite);
+		imprimirResultados(recomendadas, limite);
+	}
+	
+	public void buscar(BusquedaStrategy criterio) {
+		List<Pelicula> resultados = criterio.buscar(peliculas);
+		imprimirResultados(resultados, -1);
+	}
+	
+	public void buscar(BusquedaStrategy criterio, int limite) {
+		List<Pelicula> resultados = criterio.buscar(peliculas);
+		imprimirResultados(resultados, limite);
 	}
 
 	private List<Pelicula> getRecomendaciones(RecomendacionStrategy condicion, Comparator<Pelicula> ordenamiento) {
@@ -64,13 +74,13 @@ public class SistemaDeRecomendacion {
 		return salida;
 	}
 
-	private void imprimirRecomendaciones(List<Pelicula> recomendadas, int limite) {
-		if (limite == -1 || recomendadas.size() < limite)
-			limite = recomendadas.size();
-		if (recomendadas.isEmpty())
-			System.out.println("No existen recomendaciones con ese criterio");
+	private void imprimirResultados(List<Pelicula> resultados, int limite) {
+		if (limite == -1 || resultados.size() < limite)
+			limite = resultados.size();
+		if (resultados.isEmpty())
+			System.out.println("No existen resultados con ese criterio");
 		for (int i = 0; i < limite; i++) {
-			System.out.println(recomendadas.get(i));
+			System.out.println(resultados.get(i));
 		}
 	}
 }

@@ -197,6 +197,8 @@ public class Main {
 		//5.
 		HermanosSimpson.verPelicula(Up);
 		HermanosSimpson.valorarPelicula(Up, 4);
+		//6.
+		System.out.println("Punto 6:");
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Lisa:");
 		sistema.recomendar(Lisa, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Bart:");
@@ -213,7 +215,7 @@ public class Main {
 		sistema.recomendar(HermanosSimpson, todosLosGeneros, popularidad, 2);
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Familia Simpson:");
 		sistema.recomendar(FamiliaSimpson, todosLosGeneros, popularidad, 2);
-		//4.
+		//
 		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Lisa:");
 		sistema.recomendar(Lisa, algunGenero, puntaje, 5);
 		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Bart:");
@@ -230,5 +232,11 @@ public class Main {
 		sistema.recomendar(HermanosSimpson, algunGenero, puntaje, 5);
 		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Familia Simpson:");
 		sistema.recomendar(FamiliaSimpson, algunGenero, puntaje, 5);
+		//7.a
+		System.out.println("Resultados de películas en las que haya actuado y dirigido Pete Docter");
+		sistema.buscar(new BusquedaAND(new BusquedaPorActor("Pete Docter"), new BusquedaPorDirector("Pete Docter")));
+		//7.b
+		System.out.println("Resultados de películas en las que haya actuado Tom Hanks:");
+		sistema.buscar(new BusquedaPorActor("Tom Hanks"));
 	}
 }

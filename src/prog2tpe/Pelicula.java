@@ -53,7 +53,7 @@ public class Pelicula {
 	}
 	public void addDirector (String director) {
 		if (!actores.contains(director))
-			actores.add(director);
+			directores.add(director);
 	}
 	public void addGenero(Genero genero) {
 		if (!generos.contains(genero)) {
