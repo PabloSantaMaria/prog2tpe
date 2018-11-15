@@ -3,9 +3,11 @@ package prog2tpe;
 import java.util.List;
 
 public abstract class Cliente {
+	private static final int CALIFICACION_MINIMA = 1;
+	private static final int CALIFICACION_MAXIMA = 5;
 	protected String nombre;
 	
-	public Cliente(String nombre) {
+	protected Cliente(String nombre) {
 		this.nombre = nombre;
 	}
 	
@@ -17,7 +19,7 @@ public abstract class Cliente {
 	public abstract List<Genero> getGenerosPreferidos();
 	
 	public void valorarPelicula(Pelicula p, int valoracion) {
-		if (valoracion >= 1 && valoracion <= 5)
+		if (valoracion >= CALIFICACION_MINIMA && valoracion <= CALIFICACION_MAXIMA)
 			p.valorar(valoracion);
 	}
 	
@@ -25,7 +27,7 @@ public abstract class Cliente {
 		if (o == null) return false;
 		if (this.getClass() != o.getClass()) return false;
 		Cliente c = (Cliente) o;
-		return this.getNombre() == c.getNombre();
+		return this.getNombre().equals(c.getNombre());
 	}
 	public String toString() {
 		return this.nombre;

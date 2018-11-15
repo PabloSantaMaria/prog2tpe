@@ -5,11 +5,11 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class BusquedaPorActor implements BusquedaStrategy {
-	private String actor;
+public class BusquedaPorGenero implements BusquedaStrategy {
+	private Genero genero;
 
-	public BusquedaPorActor(String actor) {
-		this.actor = actor;
+	public BusquedaPorGenero(Genero genero) {
+		this.genero = genero;
 	}
 	@Override
 	public List<Pelicula> buscar(List<Pelicula> peliculas) {
@@ -17,7 +17,7 @@ public class BusquedaPorActor implements BusquedaStrategy {
 		Iterator<Pelicula> peliculasIterator = peliculas.iterator();
 		while (peliculasIterator.hasNext()) {
 			Pelicula pelicula = peliculasIterator.next();
-			if (pelicula.getActores().contains(actor))
+			if (pelicula.getGeneros().contains(genero))
 				salida.add(pelicula);
 		}
 		Collections.sort(salida);

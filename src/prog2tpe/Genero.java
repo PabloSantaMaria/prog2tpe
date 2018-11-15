@@ -16,13 +16,19 @@ public class Genero {
 
 	public void setNombre(String nombre) { this.nombre = nombre; }
 
-	public List<Pelicula> getPeliculas() { return peliculas; }
+	public List<Pelicula> getPeliculas() { return new ArrayList<Pelicula>(peliculas); }
 
 	public void addPelicula(Pelicula pelicula) {
 		if (!peliculas.contains(pelicula)) {
 			peliculas.add(pelicula);
 			pelicula.addGenero(this);
 		}
+	}
+	public boolean equals(Object o) {
+		if (o == null) return false;
+		if (this.getClass() != o.getClass()) return false;
+		Genero g = (Genero) o;
+		return this.getNombre().equalsIgnoreCase(g.getNombre());
 	}
 	public String toString() {
 		return this.nombre;

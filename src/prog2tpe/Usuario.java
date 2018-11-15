@@ -17,10 +17,10 @@ public class Usuario extends Cliente {
 	public int getEdad() { return edad; }
 	public void setEdad(int edad) { this.edad = edad; }
 	public List<Pelicula> getPeliculasVistas() {
-		return peliculasVistas;
+		return new ArrayList<Pelicula>(peliculasVistas);
 	}
 	public List<Genero> getGenerosPreferidos() {
-		return generosPreferidos;
+		return new ArrayList<Genero>(generosPreferidos);
 	}
 
 	public void verPelicula(Pelicula pelicula) {

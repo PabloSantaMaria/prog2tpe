@@ -3,7 +3,7 @@ package prog2tpe;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pelicula {
+public class Pelicula implements Comparable<Pelicula> {
 	private String titulo;
 	private int anio;
 	private String sinopsis;
@@ -31,9 +31,9 @@ public class Pelicula {
 	public int getAnio() { return anio; }
 	public String getSinopsis() { return sinopsis; }
 	public int getDuracion() { return duracion; }
-	public List<String> getActores() { return actores; }
-	public List<String> getDirectores() { return directores; }
-	public List<Genero> getGeneros() { return generos; }	
+	public List<String> getActores() { return new ArrayList<String>(actores); }
+	public List<String> getDirectores() { return new ArrayList<String>(directores); }
+	public List<Genero> getGeneros() { return new ArrayList<Genero>(generos); }
 	public int getPopularidad() { return popularidad; }
 	public int getCantVotos() { return cantVotos; }
 	public double getPuntaje() {
@@ -69,18 +69,23 @@ public class Pelicula {
 		totalValoraciones += valoracion;
 		cantVotos++;
 	}
-
+	public boolean cumple(RecomendacionStrategy condicion) {
+		return condicion.cumpleCriterio(this);
+	}
+	
+	@Override
 	public boolean equals(Object o) {
 		if (o == null) return false;
 		if (this.getClass() != o.getClass()) return false;
 		Pelicula p = (Pelicula) o;
-		return this.getTitulo() == p.getTitulo() && this.getAnio() == p.getAnio();
+		return this.getTitulo().equalsIgnoreCase(p.getTitulo()) && this.getAnio() == p.getAnio();
 	}
+	@Override
 	public String toString() {
 		return titulo + " (" + anio + ")";
 	}
-
-	public boolean cumple(RecomendacionStrategy condicion) {
-		return condicion.cumpleCriterio(this);
+	@Override
+	public int compareTo(Pelicula otra) {
+		return this.getTitulo().compareTo(otra.getTitulo());
 	}
 }

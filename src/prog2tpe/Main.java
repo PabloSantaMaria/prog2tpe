@@ -157,86 +157,110 @@ public class Main {
 		
 		//RESOLUCION
 		//1.
+		System.out.println("<< Punto 1 >>");
 		sistema.listarPeliculasVistas(Marge);
 		//2.
+		System.out.println("\n<< Punto 2 >>");
 		sistema.listarPeliculasVistas(Bart);
 		//3.
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Lisa:");
+		System.out.println("\n<< Punto 3 >>");
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad:");
+		System.out.println("\nPara Lisa:");
 		sistema.recomendar(Lisa, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Bart:");
+		System.out.println("\nPara Bart:");
 		sistema.recomendar(Bart, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Maggie:");
+		System.out.println("\nPara Maggie:");
 		sistema.recomendar(Maggie, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Marge:");
+		System.out.println("\nPara Marge:");
 		sistema.recomendar(Marge, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Homero:");
+		System.out.println("\nPara Homero:");
 		sistema.recomendar(Homero, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Hombres Simpson:");
+		System.out.println("\nPara Hombres Simpson:");
 		sistema.recomendar(HombresSimpson, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Hermanos Simpson:");
+		System.out.println("\nPara Hermanos Simpson:");
 		sistema.recomendar(HermanosSimpson, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Familia Simpson:");
+		System.out.println("\nPara Familia Simpson:");
 		sistema.recomendar(FamiliaSimpson, todosLosGeneros, popularidad, 2);
 		//4.
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Lisa:");
+		System.out.println("\n<< Punto 4 >>");
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje:");
+		System.out.println("\nPara Lisa:");
 		sistema.recomendar(Lisa, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Bart:");
+		System.out.println("\nPara Bart:");
 		sistema.recomendar(Bart, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Maggie:");
+		System.out.println("\nPara Maggie:");
 		sistema.recomendar(Maggie, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Marge:");
+		System.out.println("\nPara Marge:");
 		sistema.recomendar(Marge, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Homero:");
+		System.out.println("\nPara Homero:");
 		sistema.recomendar(Homero, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Hombres Simpson:");
+		System.out.println("\nPara Hombres Simpson:");
 		sistema.recomendar(HombresSimpson, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Hermanos Simpson:");
+		System.out.println("\nPara Hermanos Simpson:");
 		sistema.recomendar(HermanosSimpson, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Familia Simpson:");
+		System.out.println("\nPara Familia Simpson:");
 		sistema.recomendar(FamiliaSimpson, algunGenero, puntaje, 5);
 		//5.
 		HermanosSimpson.verPelicula(Up);
 		HermanosSimpson.valorarPelicula(Up, 4);
 		//6.
-		System.out.println("Punto 6:");
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Lisa:");
+		System.out.println("\n<< Punto 6 >>");
+		System.out.println("\n<< Punto 2 bis >>");
+		sistema.listarPeliculasVistas(Bart);
+		
+		System.out.println("\n<< Punto 3 bis >>");
+		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad:");
+		System.out.println("\nPara Lisa:");
 		sistema.recomendar(Lisa, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Bart:");
+		System.out.println("\nPara Bart:");
 		sistema.recomendar(Bart, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Maggie:");
+		System.out.println("\nPara Maggie:");
 		sistema.recomendar(Maggie, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Marge:");
+		System.out.println("\nPara Marge:");
 		sistema.recomendar(Marge, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Homero:");
+		System.out.println("\nPara Homero:");
 		sistema.recomendar(Homero, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Hombres Simpson:");
+		System.out.println("\nPara Hombres Simpson:");
 		sistema.recomendar(HombresSimpson, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Hermanos Simpson:");
+		System.out.println("\nPara Hermanos Simpson:");
 		sistema.recomendar(HermanosSimpson, todosLosGeneros, popularidad, 2);
-		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad para Familia Simpson:");
+		System.out.println("\nPara Familia Simpson:");
 		sistema.recomendar(FamiliaSimpson, todosLosGeneros, popularidad, 2);
-		//
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Lisa:");
+		
+		System.out.println("\n<< Punto 4 bis >>");
+		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje:");
+		System.out.println("\nPara Lisa:");
 		sistema.recomendar(Lisa, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Bart:");
+		System.out.println("\nPara Bart:");
 		sistema.recomendar(Bart, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Maggie:");
+		System.out.println("\nPara Maggie:");
 		sistema.recomendar(Maggie, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Marge:");
+		System.out.println("\nPara Marge:");
 		sistema.recomendar(Marge, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Homero:");
+		System.out.println("\nPara Homero:");
 		sistema.recomendar(Homero, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Hombres Simpson:");
+		System.out.println("\nPara Hombres Simpson:");
 		sistema.recomendar(HombresSimpson, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Hermanos Simpson:");
+		System.out.println("\nPara Hermanos Simpson:");
 		sistema.recomendar(HermanosSimpson, algunGenero, puntaje, 5);
-		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje para Familia Simpson:");
+		System.out.println("\nPara Familia Simpson:");
 		sistema.recomendar(FamiliaSimpson, algunGenero, puntaje, 5);
+		
 		//7.a
-		System.out.println("Resultados de películas en las que haya actuado y dirigido Pete Docter");
+		System.out.println("\n<< Punto 7.a >>");
+		System.out.println("Resultados de películas en las que haya actuado y dirigido Pete Docter:\n");
 		sistema.buscar(new BusquedaAND(new BusquedaPorActor("Pete Docter"), new BusquedaPorDirector("Pete Docter")));
 		//7.b
-		System.out.println("Resultados de películas en las que haya actuado Tom Hanks:");
+		System.out.println("\n<< Punto 7.b >>");
+		System.out.println("Resultados de películas en las que haya actuado Tom Hanks:\n");
 		sistema.buscar(new BusquedaPorActor("Tom Hanks"));
+		//7.c
+		System.out.println("\n<< Punto 7.c >>");
+		System.out.println("Resultados de películas estrenadas a partir del año 2000:\n");
+		sistema.buscar(new BusquedaPorAnio(2000, 2018));
+		//7.d
+		System.out.println("\n<< Punto 7.d >>");
+		System.out.println("Resultados de películas del genero Romántico, Comedia, o Drama:\n");
+		sistema.buscar(new BusquedaOR(new BusquedaPorGenero(Romantico), new BusquedaPorGenero(Comedia), new BusquedaPorGenero(Drama)));
 	}
 }
