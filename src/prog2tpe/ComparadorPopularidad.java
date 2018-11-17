@@ -1,7 +1,9 @@
 package prog2tpe;
 
 import java.util.Comparator;
-
+/*
+ * Compara películas por cantidad de veces vista en orden descendente.
+ */
 public class ComparadorPopularidad implements Comparator<Pelicula> {
 
 	@Override

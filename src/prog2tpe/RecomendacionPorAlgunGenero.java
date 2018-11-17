@@ -1,7 +1,10 @@
 package prog2tpe;
 
 import java.util.Iterator;
-
+/**
+ * Define un comportamiento para recomendar una película al usuario o grupo si contiene algún género preferido
+ * Los géneros preferidos de un grupo son todos los géneros de los integrantes sin repetidos
+ */
 public class RecomendacionPorAlgunGenero implements RecomendacionStrategy {
 	private Cliente cliente;
 	
@@ -19,6 +22,10 @@ public class RecomendacionPorAlgunGenero implements RecomendacionStrategy {
 		this.cliente = cliente;
 	}
 	
+	/**
+	 * Recive una película
+	 * @return:	true si contiene algun género preferido del cliente
+	 */
 	@Override
 	public boolean cumpleCriterio(Pelicula pelicula) {
 		boolean contieneAlguno = false;

@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+/**
+ * Recibe múltiples criterios de búsqueda y devuelve una lista con todas las películas que cumplen con alguno.
+ * Usa varargs.
+ */
 public class BusquedaOR implements BusquedaStrategy {
 	private BusquedaStrategy[] criterios;
 	
@@ -14,10 +17,10 @@ public class BusquedaOR implements BusquedaStrategy {
 
 	@Override
 	public List<Pelicula> buscar(List<Pelicula> peliculas) {
-		Set<Pelicula> aux = new HashSet<Pelicula>();
+		Set<Pelicula> salida = new HashSet<Pelicula>();
 		for (BusquedaStrategy criterio : criterios) {
-			aux.addAll(criterio.buscar(peliculas));
+			salida.addAll(criterio.buscar(peliculas));
 		}
-		return new ArrayList<>(aux);	
+		return new ArrayList<>(salida);	
 	}
 }

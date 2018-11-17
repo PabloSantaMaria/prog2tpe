@@ -1,7 +1,9 @@
 package prog2tpe;
 
 import java.util.Comparator;
-
+/*
+ * Compara películas por año en orden ascendente.
+ */
 public class ComparadorAnio implements Comparator<Pelicula> {
 
 	@Override

@@ -2,6 +2,10 @@ package prog2tpe;
 
 import java.util.List;
 
+/**
+ * Recibe múltiples criterios de búsqueda y devuelve una lista con todas las películas que los cumplen.
+ * Usa varargs.
+ */
 public class BusquedaAND implements BusquedaStrategy {
 	private BusquedaStrategy[] criterios;
 	

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
+/*
+ * Busca por actor y devuelve una lista de películas ordenadas por orden alfabético
+ */
 public class BusquedaPorActor implements BusquedaStrategy {
 	private String actor;
 

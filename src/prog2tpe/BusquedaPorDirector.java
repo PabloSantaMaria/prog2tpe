@@ -3,7 +3,9 @@ package prog2tpe;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+/*
+ * Devuelve una lista de películas que contengan un determinado director.
+ */
 public class BusquedaPorDirector implements BusquedaStrategy {
 	private String director;
 

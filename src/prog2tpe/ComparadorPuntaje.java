@@ -1,7 +1,9 @@
 package prog2tpe;
 
 import java.util.Comparator;
-
+/*
+ * Compara películas por puntaje en orden descendente.
+ */
 public class ComparadorPuntaje implements Comparator<Pelicula> {
 
 	@Override

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
+/*
+ * Recibe un género y devuelve la lista de películas que pertenecen a ese género.
+ */
 public class BusquedaPorGenero implements BusquedaStrategy {
 	private Genero genero;
 

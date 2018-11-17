@@ -121,13 +121,6 @@ public class Main {
 		sistema.addCliente(HombresSimpson);
 		sistema.addCliente(HermanosSimpson);
 		sistema.addCliente(FamiliaSimpson);
-		sistema.addGenero(Comedia);
-		sistema.addGenero(Drama);
-		sistema.addGenero(Accion);
-		sistema.addGenero(Aventura);
-		sistema.addGenero(Infantil);
-		sistema.addGenero(Musical);
-		sistema.addGenero(Romantico);
 		sistema.addPelicula(MonstersInc);
 		sistema.addPelicula(ToyStory);
 		sistema.addPelicula(LosIncreibles2);
