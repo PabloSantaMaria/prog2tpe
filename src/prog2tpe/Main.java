@@ -152,9 +152,11 @@ public class Main {
 		//1.
 		System.out.println("<< Punto 1 >>");
 		sistema.listarPeliculasVistas(Marge);
+		
 		//2.
 		System.out.println("\n<< Punto 2 >>");
 		sistema.listarPeliculasVistas(Bart);
+		
 		//3.
 		System.out.println("\n<< Punto 3 >>");
 		System.out.println("Recomendadas que incluyen TODOS los géneros, ordenadas por popularidad:");
@@ -174,6 +176,7 @@ public class Main {
 		sistema.recomendar(HermanosSimpson, todosLosGeneros, popularidad, 2);
 		System.out.println("\nPara Familia Simpson:");
 		sistema.recomendar(FamiliaSimpson, todosLosGeneros, popularidad, 2);
+		
 		//4.
 		System.out.println("\n<< Punto 4 >>");
 		System.out.println("Recomendadas que incluyen ALGÚN género, ordenadas por puntaje:");
@@ -193,9 +196,11 @@ public class Main {
 		sistema.recomendar(HermanosSimpson, algunGenero, puntaje, 5);
 		System.out.println("\nPara Familia Simpson:");
 		sistema.recomendar(FamiliaSimpson, algunGenero, puntaje, 5);
+		
 		//5.
 		HermanosSimpson.verPelicula(Up);
 		HermanosSimpson.valorarPelicula(Up, 4);
+		
 		//6.
 		System.out.println("\n<< Punto 6 >>");
 		System.out.println("\n<< Punto 2 bis >>");
@@ -243,14 +248,17 @@ public class Main {
 		System.out.println("\n<< Punto 7.a >>");
 		System.out.println("Resultados de películas en las que haya actuado y dirigido Pete Docter:\n");
 		sistema.buscar(new BusquedaAND(new BusquedaPorActor("Pete Docter"), new BusquedaPorDirector("Pete Docter")));
+		
 		//7.b
 		System.out.println("\n<< Punto 7.b >>");
 		System.out.println("Resultados de películas en las que haya actuado Tom Hanks:\n");
 		sistema.buscar(new BusquedaPorActor("Tom Hanks"));
+		
 		//7.c
 		System.out.println("\n<< Punto 7.c >>");
 		System.out.println("Resultados de películas estrenadas a partir del año 2000:\n");
 		sistema.buscar(new BusquedaPorAnio(2000, 2018));
+		
 		//7.d
 		System.out.println("\n<< Punto 7.d >>");
 		System.out.println("Resultados de películas del genero Romántico, Comedia, o Drama:\n");
