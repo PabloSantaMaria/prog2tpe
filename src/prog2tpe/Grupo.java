@@ -17,7 +17,7 @@ public class Grupo extends Cliente {
 	 * Obtiene recursivamente las películas vistas por todos sus integrantes
 	 * @return:	una lista de películas sin repetidos
 	 */
-	public List<Pelicula> getPeliculasVistas() {
+	protected List<Pelicula> getPeliculasVistas() {
 		List<Pelicula> salida = new ArrayList<Pelicula>();
 		for (Cliente integrante : integrantes) {
 			for (Pelicula pelicula : integrante.getPeliculasVistas()) {
@@ -31,7 +31,7 @@ public class Grupo extends Cliente {
 	 * Obtiene recursivamente los géneros preferidos de todos los integrantes
 	 * @return:	una lista de géneros sin repetidos
 	 */
-	public List<Genero> getGenerosPreferidos() {
+	protected List<Genero> getGenerosPreferidos() {
 		List<Genero> salida = new ArrayList<Genero>();
 		for (Cliente integrante : integrantes) {
 			for (Genero genero : integrante.getGenerosPreferidos()) {

@@ -29,9 +29,9 @@ public class RecomendacionPorAlgunGenero implements RecomendacionStrategy {
 	@Override
 	public boolean cumpleCriterio(Pelicula pelicula) {
 		boolean contieneAlguno = false;
-		Iterator<Genero> generosCliente = cliente.getGenerosPreferidos().iterator();
-		while (generosCliente.hasNext() && !contieneAlguno) {
-			Genero generoCliente = generosCliente.next();
+		Iterator<Genero> generosPreferidos = cliente.getGenerosIterator();
+		while (generosPreferidos.hasNext() && !contieneAlguno) {
+			Genero generoCliente = generosPreferidos.next();
 			if (pelicula.getGeneros().contains(generoCliente))
 				contieneAlguno = true;
 		}

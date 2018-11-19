@@ -22,10 +22,10 @@ public class Usuario extends Cliente {
 	 */
 	public int getEdad() { return edad; }
 	
-	public List<Pelicula> getPeliculasVistas() {
+	protected List<Pelicula> getPeliculasVistas() {
 		return new ArrayList<Pelicula>(peliculasVistas);
 	}
-	public List<Genero> getGenerosPreferidos() {
+	protected List<Genero> getGenerosPreferidos() {
 		return new ArrayList<Genero>(generosPreferidos);
 	}
 	/*

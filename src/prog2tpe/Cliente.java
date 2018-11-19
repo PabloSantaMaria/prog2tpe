@@ -1,5 +1,6 @@
 package prog2tpe;
 
+import java.util.Iterator;
 import java.util.List;
 /*
  * Objeto Componente abstracto.
@@ -29,9 +30,22 @@ public abstract class Cliente {
 	 * Métodos abstractos
 	 */
 	public abstract void verPelicula(Pelicula pelicula);
-	public abstract List<Pelicula> getPeliculasVistas();
-	public abstract List<Genero> getGenerosPreferidos();
-
+	protected abstract List<Pelicula> getPeliculasVistas();
+	protected abstract List<Genero> getGenerosPreferidos();
+	/**
+	 * Otorga una manera de recorrer las películas vistas sin revelar la estructura
+	 * @return: un iterator de tipo Pelicula
+	 */
+	public Iterator<Pelicula> getPeliculasIterator() {
+		return this.getPeliculasVistas().iterator();
+	}
+	/**
+	 * Otorga una manera de recorrer los géneros preferidos sin revelar la estructura
+	 * @return: un iterator de tipo Genero
+	 */
+	public Iterator<Genero> getGenerosIterator() {
+		return this.getGenerosPreferidos().iterator();
+	}
 	/**
 	 * Valora una película con puntaje entre constantes CALIFICACION_MINIMA y CALIFICACION_MAXIMA
 	 * @param p:	objeto tipo Pelicula

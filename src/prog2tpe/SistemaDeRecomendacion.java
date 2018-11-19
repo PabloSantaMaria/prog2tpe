@@ -33,10 +33,10 @@ public class SistemaDeRecomendacion {
 	 * @param cliente
 	 */
 	public void listarPeliculasVistas(Cliente cliente) {
-		Iterator<Pelicula> iterator = cliente.getPeliculasVistas().iterator();
+		Iterator<Pelicula> peliculasVistas = cliente.getPeliculasIterator();
 		System.out.println("Películas vistas por " + cliente + ":");
-		while (iterator.hasNext()) {
-			Pelicula pelicula = iterator.next();
+		while (peliculasVistas.hasNext()) {
+			Pelicula pelicula = peliculasVistas.next();
 			System.out.print(pelicula + "\n");
 		}
 	}
